@@ -22,7 +22,18 @@
 
     <!-- The Viewer will be instantiated here -->
     <div id="MyViewerDiv"></div>
-
+    <button id="MyNextButton" onClick="loadNextModel()">Next!</button>
+    <style>
+        #MyNextButton {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            z-index: 1;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+    
     <!-- The Viewer JS -->
     <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/three.min.js"></script>
     <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/viewer3D.min.js"></script>
@@ -105,5 +116,13 @@
             console.error('onLoadModelError() - errorCode:' + viewerErrorCode);
         }
 
+        /**
+         * Callback function for "Next" button.
+         * Attempts to load the next from the document. If there is only one model, then the
+         * current model gets unloaded and then is loaded again.
+         */
+        function loadNextModel() {
+            console.log('TODO: Load Next Model');
+        }
     </script>
 </body>
